@@ -9,7 +9,12 @@ export default function LRpage() {
         </View>
         <View style={styles.containerform}>
             <View style={styles.form}>
-                <TextInput style={styles.input} placeholder="Name:" />
+                <TextInput
+                    style={styles.input}
+                    placeholder="Name:"
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    />
                 <TextInput style={styles.input} placeholder="Password:"/>
                 <View style={styles.btnGrup}>
                     <TouchableOpacity style={styles.btn}>
