@@ -1,43 +1,55 @@
 import React from 'react';
-import {View,Text,TextInput,TouchableOpacity,StyleSheet} from 'react-native';
-
+import {View,Text,Image,TextInput,TouchableOpacity,StyleSheet} from 'react-native';
+import logo from '../../assets/simpleIcon.png'
 export default function LRpage() {
   return (
     <View style={styles.container}>
-        <View style={styles.logo}>
-            <Text>Logo</Text>
+        <View style={styles.logocontainer}>
+            <Image style={styles.logo} source={logo}/>
         </View>
         <View style={styles.containerform}>
             <View style={styles.form}>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Name:"
-                    autoCapitalize="none"
-                    autoCorrect={false}
+                <View style={styles.formInput}>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Number:"
+                        autoCapitalize="none"
+                        autoCorrect={false}
                     />
-                <TextInput style={styles.input} placeholder="Password:"/>
+                    <TextInput style={styles.input}
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        placeholder="Password:"
+                    />
+                </View>
+                
                 <View style={styles.btnGrup}>
                     <TouchableOpacity style={styles.btn}>
-                        <Text>sign up</Text>
+                        <Text style={styles.textBtn}>sign up</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btn}>
-                        <Text>sign in</Text>
+                        <Text style={styles.textBtn}>sign in</Text>
                     </TouchableOpacity>
                 </View>
             </View>
         </View>
 
         <View style={styles.footer}>
-            <Text>Forgot password?</Text>
+            <TouchableOpacity>
+                <Text style={styles.textBtn}>Forgot password?</Text>
+            </TouchableOpacity>
         </View>
     </View>
   );
 }
 const styles = StyleSheet.create({
-    logo:{
+    logocontainer:{
         justifyContent: 'center',
-        alignItems: 'center',
-        flex: 3
+        alignContent: 'center',
+        flex: 2
+    },
+    logo:{
+      padding: 2,  
     },
     containerform:{
         flex:2
@@ -49,35 +61,41 @@ const styles = StyleSheet.create({
     },
     container:{
         flex: 1,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#8C53A0',
         justifyContent: 'center',
         alignItems: 'center',
     },
+    textBtn:{
+        color: '#fff',
+    },
     form:{
         width: 295,
-        height: 164,
+        height: 270,
         justifyContent:'space-between'
+    },
+    formInput:{
+        justifyContent: 'space-around',
+        height: 160,
     },
     input:{
         alignSelf:'stretch',
-        height:40,
+        height:45,
         backgroundColor:'#fff',
-        borderWidth:1,
-        borderColor:'#c4c4c4',
-        borderRadius:20,
-        paddingHorizontal: 10
+        borderColor:'#fff',
+        borderRadius:22.5,
+        paddingHorizontal: 20
     },
     btnGrup:{
         flexDirection: 'row',
         justifyContent: 'space-evenly',
     },
     btn:{
-        width: 120,
-        height:40,
+        width: 125,
+        height:45,
         alignItems: 'center',
         justifyContent:'center',
         borderWidth:1,
-        borderColor:'#c4c4c4',
+        borderColor:'#fff',
         borderRadius:10,
     }
 })
